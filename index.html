@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>canyoutellmeafairytale.com — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Match main site colors */
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --bg:#FBFBF3;           /* stone-white */
+      --text:#2F2E0C;         /* deep khaki */
+      --muted:#6c6b4a;        /* muted khaki */
+      --card:#ffffff;
+      --line:#e6e3d6;
+      --accent:#AEFF6E;       /* Printify green */
+      --accent-2:#ffdca8;     /* peach highlight */
+      --shadow:0 14px 36px rgba(60,40,10,.08);
+      --radius:22px;
+      --max:920px;
+    }
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--text); background:var(--bg);
+      font-family:"Quicksand", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrapper{min-height:100svh; display:grid; place-items:center; padding:clamp(16px,4vw,40px)}
+    .card{width:min(100%,var(--max));  padding:clamp(22px,4vw,36px);}
+
+    .brand{display:flex; align-items:center; text-align: center; gap:12px; font-family:"Schoolbell", cursive; font-size:22px}
+    .seal{width:40px; height:40px; }
+
+    .hero{display:grid; gap:clamp(18px,3.2vw,28px); grid-template-columns:1fr; align-items:center; text-align: center;}
+    @media (min-width:900px){ .hero{ grid-template-columns:1.05fr .95fr; } }
+    @media (max-width:900px){ .card  { display: flex } }
+    @media (max-width:500px){ .card  { display: block } }
+
+    .kicker{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:12px}
+
+    h1{font-family:"Schoolbell", cursive; text-align: left; font-size:clamp(34px,6vw,56px); line-height:1.05; margin:.2em 0 .1em}
+    .lead{max-width:50ch; color:var(--muted); text-align: left; }
+
+    .cta{display:grid; grid-template-columns:1fr auto; gap:10px; margin-top:10px }
+    .input{padding:12px 14px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--text)}
+    .btn{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); background:var(--accent); padding:10px 16px; border-radius:999px; font-weight:700; color:var(--text)}
+
+    .board{ padding:16px;}
+
+    .countdown{display:flex; gap:10px; margin-top:10px}
+    .tile{min-width:70px; padding:10px 12px; background:#fff; border:1px solid var(--line); border-radius:12px; text-align:center}
+    .tile strong{display:block; font-family:"Schoolbell", cursive; font-size:28px}
+    .tile span{font-size:12px; color:var(--muted)}
+
+    footer{margin-top:20px; text-align:center; color:var(--muted); font-size:14px}
+
+    @media (prefers-reduced-motion:no-preference){ .float{ animation:float 7s ease-in-out infinite } @keyframes float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} } }
+  </style>
+</head>
+<body>
+  <main class="wrapper">
+    <section class="card hero">
+      <div>
+        <div class="brand"><span class="seal" aria-hidden></span> canyoutellmeafairytale.com</div>
+        <h1>We’re spinning new capybara tales</h1>
+        <p class="lead">We are almost ready. Get a gentle, family‑friendly story in your inbox when we launch.</p>
+        
+      </div>
+      <div class="board float" aria-label="Two capybaras illustration">
+        <img src="public/capys.png" width="300" />
+      </div>
+    </section>
+    <footer>
+      © <span id="year"></span> Can you tell me a fairytale
+    </footer>
+  </main>
+</body>
+</html>

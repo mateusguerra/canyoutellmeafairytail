@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>canyoutellmeafairytale.com — Nora & Bento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Paper‑storybook theme (vanilla CSS) */
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --paper:#f8f6ef;         /* warm paper */
+      --ink:#5a4a2b;           /* cocoa ink */
+      --accent:#c8df8a;        /* leaf green */
+      --accent-2:#ffd9a6;      /* peach */
+      --accent-3:#b7d9ff;      /* sky */
+      --line:#e6e0cf;          /* pencil line */
+      --shadow:0 12px 30px rgba(60,40,10,.08);
+      --radius:22px;
+      --max:1080px;
+    }
+
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #ffffff 0%, transparent 60%),
+        radial-gradient(900px 400px at 110% 10%, #fff 0%, transparent 60%),
+        var(--paper);
+      font-family: "Quicksand", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6;
+    }
+
+    .container{max-width:var(--max);margin-inline:auto;padding-inline:clamp(16px,3vw,32px)}
+    h1,h2,h3{font-family:"Schoolbell", cursive; letter-spacing:.5px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 92%, transparent);backdrop-filter:saturate(120%) blur(6px); border-bottom:1px dashed var(--line)}
+    .bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-family:"Schoolbell",cursive;font-size:22px}
+    .seal{width:38px;height:38px;border-radius:999px;border:1px dashed var(--line);background:conic-gradient(from 90deg,var(--accent),#eaffc9,var(--accent))}
+    nav{justify-self:center;display:none;gap:18px;font-weight:600}
+    nav a{opacity:.85;text-decoration:none;border-bottom:2px dotted transparent}
+    nav a:hover{opacity:1;border-bottom-color:var(--accent)}
+    .btn{border:none; display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-weight:700}
+    .btn--leaf{background:var(--accent);}
+    a{color: var(--ink); border: none; text-decoration: none;}
+    @media (min-width:880px){nav{display:inline-flex}}
+    
+    /* Hero */
+    .hero{position:relative;overflow:clip;border-bottom:1px dashed var(--line)}
+    .hero .grid{display:grid;gap:32px;grid-template-columns:1fr;align-items:center;padding-block:clamp(28px,8vw,84px)}
+    @media (min-width:980px){.hero .grid{grid-template-columns:1.1fr .9fr}}
+    .kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px dashed var(--line);background:#fff;border-radius:999px;font-size:12px}
+    .title{font-size:clamp(34px,6vw,60px);line-height:1.05;margin:.2em 0 .1em}
+    .lead{max-width:46ch;color:#715f39}
+
+    .bubble{position:relative;display:inline-block;background:#fff;border:1px dashed var(--line);border-radius:18px;padding:10px 14px;box-shadow:var(--shadow)}
+    .bubble::after{content:"";position:absolute;left:18px;bottom:-10px;width:16px;height:16px;background:#fff;border-left:1px dashed var(--line);border-bottom:1px dashed var(--line);transform:rotate(45deg)}
+
+    /* Section headings */
+    .section{padding:clamp(32px,7vw,84px) 0}
+    .section h2{font-size:clamp(26px,4vw,40px);margin:0 0 8px}
+    .sub{margin:0 0 20px;color:#7a6b4b}
+
+    /* Cards */
+    .grid{display:grid;gap:16px}
+    .grid--cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+    .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;border:1px dashed var(--line);padding:6px 10px;border-radius:999px;background:#f8fff0}
+
+    /* Illustration board (like specimen sheets) */
+    .board{padding:18px;}
+    .board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+
+    /* Footer */
+    footer{border-top:1px dashed var(--line);padding:40px 0 56px;color:#7a6b4b}
+    .fgrid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+    @media (min-width:860px){.fgrid{grid-template-columns:repeat(4,1fr)}}
+
+    /* Subtle motions */
+    @media (prefers-reduced-motion:no-preference){
+      .float{animation:float 7s ease-in-out infinite}
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container bar">
+      <a class="brand" href="#"><span class="seal" aria-hidden></span> canyoutellmeafairytale.com</a>
+      <nav>
+        <a href="#stories">Stories</a>
+        <a href="#alphabet">Alphabet</a>
+        <a href="#scenes">Scenes</a>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+      <a class="btn btn--leaf" href="#tell">Tell me a fairytale</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container grid">
+      <div>
+        <span class="kicker"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span> Whimsical bedtime tales</span>
+        <h1 class="title">Can you tell me a fairytale</h1>
+        <p class="lead">Cozy, fairytales of two curious capybaras who glide down moonlit rivers, barter for cloud umbrellas, and learn tiny big lessons along the way.</p>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn--leaf" href="#stories">Read a story</a>
+          <span class="bubble">“Can you tell me a fairytale?”</span>
+        </div>
+      </div>
+      <div class="board float" aria-label="Hero illustration">
+        <img src="public/capys.png" width="300" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Alphabet / font specimen style -->
+  <section class="section" id="alphabet">
+    <div class="container">
+      <h2>Site lettering</h2>
+      <p class="sub">Handwritten sans-serif vibe for headings and cozy cocoa ink for details.</p>
+      <div class="board">
+        <div style="display:grid;gap:20px;justify-items:center;text-align:center">
+          <div style="font-family:Schoolbell, cursive;font-size:40px">canyoutellmeafairytale.com</div>
+          <div style="font-size:24px;letter-spacing:2px">A B C D E F G H I J K L M N<br/>O P Q R S T U V W X Y Z</div>
+          <div style="font-size:22px">0 1 2 3 4 5 6 7 8 9 • &amp; ? ! ( ) { } [ ] # $ € £ ¥</div>
+          <div class="pill">multilingual friendly • lorem âêîõ üç ñ ø å</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stories preview -->
+  <section class="section" id="stories">
+    <div class="container">
+      <h2>Latest capybara fairytales</h2>
+      <p class="sub">Short, soothing adventures for curious minds.</p>
+      <div class="grid grid--cards">
+        <article class="card">
+          <span class="pill"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span> Kindness</span>
+          <h3>The River That Sang Back</h3>
+          <p class="sub">A humming river teaches Nora & Bento how listening can turn ripples into songs.</p>
+          <div class="board" style="padding:10px">
+            <!-- tiny river scene -->
+            <svg viewBox="0 0 520 160" width="100%" aria-label="River with boat">
+              <rect x="0" y="0" width="520" height="160" fill="#fdfcf8"/>
+              <path d="M0 110 C 120 90, 220 140, 340 120 S 520 110, 520 110" fill="none" stroke="#9ed0ff" stroke-width="10" stroke-linecap="round"/>
+              <path d="M200 92 l40 0 -20 16 z" fill="#ffcc8f" stroke="#8a6a45"/>
+              <circle cx="230" cy="92" r="4" fill="#8a6a45"/>
+            </svg>
+          </div>
+          <a class="btn" href="#">Read story →</a>
+        </article>
+        <article class="card">
+          <span class="pill"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent-2)"></span> Courage</span>
+          <h3>The Umbrella Market in the Clouds</h3>
+          <p class="sub">They barter giggles for umbrellas that open secrets of the sky.</p>
+          <div class="board" style="padding:10px">
+            <!-- cloud umbrellas -->
+            <svg viewBox="0 0 520 160" width="100%" aria-label="Cloud umbrellas">
+              <g stroke="#8a6a45" stroke-width="2">
+                <path d="M120 70 q40 -30 80 0 q-40 28 -80 0" fill="#eaf6ff"/>
+                <line x1="160" y1="70" x2="160" y2="110"/>
+                <path d="M160 110 q8 10 18 0" fill="none"/>
+                <path d="M320 70 q40 -30 80 0 q-40 28 -80 0" fill="#eaf6ff"/>
+                <line x1="360" y1="70" x2="360" y2="110"/>
+                <path d="M360 110 q8 10 18 0" fill="none"/>
+              </g>
+            </svg>
+          </div>
+          <a class="btn" href="#">Read story →</a>
+        </article>
+        <article class="card">
+          <span class="pill"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent-3)"></span> Wonder</span>
+          <h3>Footprints of the Moon Deer</h3>
+          <p class="sub">Following silver hoofprints, they discover a lantern made of dew.</p>
+          <div class="board" style="padding:10px">
+            <!-- moon deer hint -->
+            <svg viewBox="0 0 520 160" width="100%" aria-label="Moon footprints">
+              <circle cx="90" cy="60" r="18" fill="#ffe6ad" stroke="#8a6a45"/>
+              <g fill="#e8f5ff" stroke="#8a6a45">
+                <ellipse cx="180" cy="110" rx="10" ry="6"/>
+                <ellipse cx="210" cy="104" rx="10" ry="6"/>
+                <ellipse cx="240" cy="98" rx="10" ry="6"/>
+                <ellipse cx="270" cy="92" rx="10" ry="6"/>
+              </g>
+            </svg>
+          </div>
+          <a class="btn" href="#">Read story →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene boards (like the specimen's collage) -->
+  <section class="section" id="scenes">
+    <div class="container">
+      <h2>Capybara adventure boards</h2>
+      <p class="sub">Elements supplied separately — so you can quickly find and add them to any scene.</p>
+      <div class="board-grid">
+        <div class="board">
+          <h3 style="margin-top:0">Hot‑air balloon</h3>
+          <svg viewBox="0 0 520 220" width="100%" aria-label="Capybaras in a hot-air balloon">
+            <defs>
+              <linearGradient id="balloon" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffd3a9"/>
+                <stop offset="100%" stop-color="#ffb873"/>
+              </linearGradient>
+            </defs>
+            <circle cx="260" cy="80" r="70" fill="url(#balloon)" stroke="#8a6a45" stroke-width="3"/>
+            <line x1="230" y1="140" x2="240" y2="170" stroke="#8a6a45" stroke-width="3"/>
+            <line x1="290" y1="140" x2="280" y2="170" stroke="#8a6a45" stroke-width="3"/>
+            <rect x="238" y="170" width="44" height="30" rx="6" fill="#d9b48a" stroke="#8a6a45" stroke-width="3"/>
+            <!-- tiny capy heads -->
+            <ellipse cx="250" cy="174" rx="10" ry="8" fill="#e6c29b" stroke="#8a6a45"/>
+            <ellipse cx="270" cy="174" rx="10" ry="8" fill="#e6c29b" stroke="#8a6a45"/>
+            <circle cx="248" cy="173" r="2" fill="#2f2e0c"/>
+            <circle cx="272" cy="173" r="2" fill="#2f2e0c"/>
+          </svg>
+        </div>
+        <div class="board">
+          <h3 style="margin-top:0">Forest reading nook</h3>
+          <svg viewBox="0 0 520 220" width="100%" aria-label="Capybaras reading under a tree">
+            <rect x="40" y="120" width="60" height="80" rx="10" fill="#b0d38c"/>
+            <rect x="120" y="110" width="60" height="90" rx="10" fill="#c2e1a5"/>
+            <rect x="80" y="100" width="60" height="100" rx="10" fill="#9fcb7e"/>
+            <ellipse cx="340" cy="170" rx="120" ry="24" fill="#e8f5ff"/>
+            <ellipse cx="280" cy="170" rx="36" ry="14" fill="#e6c29b"/>
+            <ellipse cx="320" cy="175" rx="36" ry="14" fill="#e6c29b"/>
+            <circle cx="270" cy="160" r="5" fill="#2f2e0c"/>
+            <circle cx="330" cy="165" r="5" fill="#2f2e0c"/>
+          </svg>
+        </div>
+        <div class="board">
+          <h3 style="margin-top:0">River raft</h3>
+          <svg viewBox="0 0 520 220" width="100%" aria-label="Capybaras rafting">
+            <path d="M40 160 C 120 140, 200 180, 280 160 S 480 160, 520 160" fill="none" stroke="#9ed0ff" stroke-width="12" stroke-linecap="round"/>
+            <rect x="220" y="128" width="80" height="18" rx="6" fill="#caa071" stroke="#8a6a45"/>
+            <ellipse cx="250" cy="124" rx="18" ry="14" fill="#e6c29b" stroke="#8a6a45"/>
+            <ellipse cx="288" cy="124" rx="18" ry="14" fill="#e6c29b" stroke="#8a6a45"/>
+            <circle cx="246" cy="122" r="3" fill="#2f2e0c"/>
+            <circle cx="292" cy="122" r="3" fill="#2f2e0c"/>
+          </svg>
+        </div>
+        <div class="board">
+          <h3 style="margin-top:0">Night sky & fireflies</h3>
+          <svg viewBox="0 0 520 220" width="100%" aria-label="Fireflies">
+            <rect x="0" y="0" width="520" height="220" rx="12" fill="#eaf2ff"/>
+            <g>
+              <circle cx="100" cy="80" r="3" fill="#ffd24a"/>
+              <circle cx="180" cy="60" r="4" fill="#ffd24a"/>
+              <circle cx="220" cy="100" r="3" fill="#ffd24a"/>
+              <circle cx="320" cy="70" r="4" fill="#ffd24a"/>
+              <circle cx="380" cy="120" r="3" fill="#ffd24a"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Subscribe -->
+<section class="section" id="subscribe" style="
+    display: flexx§;
+    align-items: baseline;
+    justify-content: flex-start;
+    min-height: 60vh;
+    text-align: center;
+">
+  <div class="container" style="max-width:480px;">
+    <h2>Get a new tale each week</h2>
+    <p class="sub">Join the free newsletter for gentle stories, printable coloring pages, and audio links.</p>
+    <form action="#" method="post" style="
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+    ">
+      <input type="email" required placeholder="you@forestmail.com" style="padding:12px 14px;border-radius:999px;border:1px dashed var(--line);background:#fff"/>
+      <button class="btn btn--leaf" type="submit">Subscribe</button>
+    </form>
+    <p class="sub" style="font-size:12px;">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container fgrid">
+      <div>
+        <strong>canyoutellmeafairytale.com</strong>
+        <p class="sub">Fair, kind stories with our capybara duo.</p>
+      </div>
+      <div>
+        <strong>Explore</strong>
+        <p class="sub"><a href="#stories">Stories</a><br><a href="#alphabet">Alphabet</a><br><a href="#scenes">Scenes</a></p>
+      </div>
+      <div>
+        <strong>Parents & Teachers</strong>
+        <p class="sub">Reading guides<br>Lesson ideas<br>Printables</p>
+      </div>
+      <div>
+        <strong>Legal</strong>
+        <p class="sub">Privacy • Terms • Contact</p>
+      </div>
+    </div>
+    <div class="container" style="margin-top:20px;text-align:center">© 2025 CapyTales — Nora & Bento</div>
+  </footer>
+</body>
+</html>
