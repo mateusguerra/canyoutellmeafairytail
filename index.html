@@ -3,119 +3,1023 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>canyoutellmeafairytale.com — Coming Soon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>can you tell me a fairytale? — Cozy Capybara Tales</title>
 
-  <!-- SEO: canonical, description, Open Graph, Twitter, theme color -->
+  <!-- SEO Tags -->
   <link rel="canonical" href="https://canyoutellmeafairytale.com/" />
-  <meta name="description" content="Wholesome, family‑friendly capybara fairytales. Bring cozy, gentle stories for bedtime and calm moments." />
+  <meta name="description" content="Wholesome, family‑friendly capybara fairytales sent slowly by physical snail mail. Cozy, gentle stories for friends." />
   <meta name="author" content="canyoutellmeafairytale.com" />
-  <meta name="theme-color" content="#FBFBF3" />
+  <meta name="theme-color" content="#FAF8F3" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="canyoutellmeafairytale.com" />
-  <meta property="og:description" content="Wholesome, family‑friendly capybara fairytales for bedtime." />
+  <meta property="og:title" content="can you tell me a fairytale? — Snail Mail" />
+  <meta property="og:description" content="Cozy capybara tales sent by physical snail mail, exclusively for friends." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://canyoutellmeafairytale.com/" />
   <meta property="og:image" content="https://canyoutellmeafairytale.com/public/capys.png" />
-  <meta property="og:image:alt" content="Two cute capybaras, Nora & Bento" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="canyoutellmeafairytale.com" />
-  <meta name="twitter:description" content="Wholesome, family‑friendly capybara fairytales for bedtime." />
-  <meta name="twitter:image" content="https://canyoutellmeafairytale.com/public/capys.png" />
+  <!-- Fonts: Fredoka (cozy rounded sans-serif), Fraunces (cozy serif), and Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Fredoka:wght@300..700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicons (replace with your actual files when ready) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "canyoutellmeafairytale.com",
-    "url": "https://canyoutellmeafairytale.com/",
-    "description": "Wholesome, family‑friendly capybara fairytales. Bring cozy, gentle stories for bedtime and calm moments.",
-    "inLanguage": "en"
-  }
-  </script>
   <style>
-    /* Match main site colors */
-    *,*::before,*::after{box-sizing:border-box}
-    :root{
-      --bg:#FBFBF3;           /* stone-white */
-      --text:#5a4a2b;         /* deep khaki */
-      --muted:#6c6b4a;        /* muted khaki */
-      --card:#ffffff;
-      --line:#e6e3d6;
-      --accent:#AEFF6E;       /* Printify green */
-      --accent-2:#ffdca8;     /* peach highlight */
-      --shadow:0 14px 36px rgba(60,40,10,.08);
-      --radius:22px;
-      --max:920px;
+    /* Cozy, paper-storybook theme CSS variables */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    html,body{height:100%}
-    body{
-      margin:0; color:var(--text); background:var(--bg);
-      font-family:"Quicksand", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height:1.6;
+
+    :root {
+      --bg-cream: #FAF7F0;
+      --text-ink: #2E2A25;
+      --text-muted: #6A665D;
+      --accent-terracotta: #BE583E;
+      --accent-terracotta-hover: #A54B33;
+      --accent-green: #4F5E4E;
+      --accent-green-light: #5E6F5C;
+      --accent-sage: #D1D8CE;
+      --card-bg: #FCFAF5;
+      --card-border: #E8E2D5;
+      --shadow-soft: 0 10px 30px rgba(46, 42, 37, 0.04);
+      --shadow-button: 0 4px 0px rgba(165, 75, 51, 0.4);
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-sans: 'Fredoka', 'Quicksand', system-ui, -apple-system, sans-serif;
     }
-    a{color:inherit;text-decoration:none}
-    .wrapper{min-height:100svh; display:grid; place-items:center; padding:clamp(16px,4vw,40px)}
-    .card{width:min(100%,var(--max));  padding:clamp(22px,4vw,36px);}
 
-    .brand{display:flex; align-items:center; text-align: center; gap:12px; font-family:"Schoolbell", cursive; font-size:22px}
-    .seal{width:40px; height:40px; }
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-ink);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
 
-    .hero{display:grid; gap:clamp(18px,3.2vw,28px); grid-template-columns:1fr; align-items:center; text-align: center;}
-    @media (min-width:900px){ .hero{ grid-template-columns:1.05fr .95fr; } }
-    @media (max-width:900px){ .card  { display: flex } }
-    @media (max-width:500px){ .card  { display: block } }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
 
-    .kicker{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:12px}
+    /* Top Announcement Banner */
+    .top-banner {
+      background-color: var(--accent-green);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-transform: uppercase;
+    }
 
-    h1{font-family:"Schoolbell", cursive; text-align: left; font-size:clamp(34px,6vw,56px); line-height:1.05; margin:.2em 0 .1em}
-    .lead{max-width:50ch; color:var(--muted); text-align: left; }
+    .top-banner svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
 
-    .cta{display:grid; grid-template-columns:1fr auto; gap:10px; margin-top:10px }
-    .input{padding:12px 14px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--text)}
-    .btn{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); background:var(--accent); padding:10px 16px; border-radius:999px; font-weight:700; color:var(--text)}
+    /* Header Navigation */
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px clamp(16px, 4vw, 40px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      gap: 20px;
+    }
 
-    .board{ padding:16px;}
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--accent-green);
+      flex-shrink: 0;
+    }
+    
+    .logo span {
+      display: block;
+    }
 
-    .countdown{display:flex; gap:10px; margin-top:10px}
-    .tile{min-width:70px; padding:10px 12px; background:#fff; border:1px solid var(--line); border-radius:12px; text-align:center}
-    .tile strong{display:block; font-family:"Schoolbell", cursive; font-size:28px}
-    .tile span{font-size:12px; color:var(--muted)}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 3vw, 36px);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
 
-    footer{margin-top:20px; text-align:center; color:var(--muted); font-size:14px}
+    nav a {
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--text-ink);
+    }
 
-    @media (prefers-reduced-motion:no-preference){ .float{ animation:float 7s ease-in-out infinite } @keyframes float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} } }
+    nav a:hover {
+      color: var(--accent-green);
+    }
+
+    nav a.cta-link {
+      color: var(--accent-terracotta);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    nav a.cta-link:hover {
+      color: var(--accent-terracotta-hover);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 12px;
+      }
+      nav {
+        justify-content: center;
+        width: 100%;
+        gap: 16px;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px clamp(16px, 4vw, 40px) 80px clamp(16px, 4vw, 40px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    @media (max-width: 968px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+        padding-bottom: 50px;
+      }
+    }
+
+    /* Hero Content */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 968px) {
+      .hero-content {
+        align-items: center;
+      }
+    }
+
+    .kicker {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(38px, 5.5vw, 62px);
+      font-weight: 800;
+      line-height: 1.08;
+      color: var(--text-ink);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
+
+    @media (max-width: 968px) {
+      .hero-title {
+        text-align: center;
+      }
+    }
+
+    .hero-title span.highlight {
+      color: var(--accent-terracotta);
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-desc {
+      font-size: clamp(16px, 1.8vw, 18px);
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 540px;
+      line-height: 1.6;
+      text-align: left;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    @media (max-width: 968px) {
+      .hero-desc {
+        text-align: center;
+      }
+    }
+
+    /* CTA Button & Subtext */
+    .cta-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    @media (max-width: 968px) {
+      .cta-container {
+        align-items: center;
+      }
+    }
+
+    .btn-claim {
+      background-color: var(--accent-terracotta);
+      color: #FFFFFF;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 0px #97402A;
+      transition: all 0.15s ease-in-out;
+      display: inline-block;
+    }
+
+    .btn-claim:hover {
+      background-color: var(--accent-terracotta-hover);
+      transform: translateY(2px);
+      box-shadow: 0 2px 0px #97402A;
+    }
+
+    .btn-claim:active {
+      transform: translateY(4px);
+      box-shadow: 0 0px 0px #97402A;
+    }
+
+    .sub-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-ink);
+    }
+
+    .sub-cta svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent-green-light);
+      flex-shrink: 0;
+    }
+
+    /* Hero Illustration & Envelope */
+    .hero-illustration {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 1.15;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bg-sun {
+      position: absolute;
+      top: 0;
+      right: 15%;
+      width: 120px;
+      height: 120px;
+      background-color: var(--bg-cream); /* fallback */
+      z-index: 1;
+    }
+
+    .bg-leaves {
+      position: absolute;
+      top: -40px;
+      left: 10%;
+      width: 150px;
+      height: 280px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      z-index: 3;
+      width: 90%;
+      height: 85%;
+      transform: rotate(5deg);
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      filter: drop-shadow(0 20px 40px rgba(46, 42, 37, 0.08));
+    }
+
+    .envelope-wrapper:hover {
+      transform: rotate(2deg) scale(1.03);
+    }
+
+    /* Three-Step Cards Section */
+    .steps-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 40px) 80px clamp(16px, 4vw, 40px);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    .step-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: #D3C9B8;
+    }
+
+    .step-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .step-card h3 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-ink);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .step-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .step-illustration {
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .step-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background-color: #ECE5D8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .step-card .arrow {
+      align-self: flex-end;
+      color: var(--accent-green);
+      font-size: 20px;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+      margin-top: auto;
+    }
+
+    .step-card:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(46, 42, 37, 0.4);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background-color: var(--bg-cream);
+      border: 2px solid var(--accent-green);
+      border-radius: 16px;
+      width: 90%;
+      max-width: 460px;
+      padding: 36px;
+      box-shadow: 0 20px 50px rgba(46, 42, 37, 0.15);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-align: center;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      border: none;
+      background: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .modal-card h2 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--accent-green);
+      margin-bottom: 12px;
+    }
+
+    .modal-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .modal-input {
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background-color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: var(--text-ink);
+      outline: none;
+    }
+
+    .modal-input:focus {
+      border-color: var(--accent-green);
+    }
+
+    .modal-btn {
+      background-color: var(--accent-terracotta);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 3px 0px #97402A;
+    }
+
+    .modal-btn:hover {
+      background-color: var(--accent-terracotta-hover);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #E2E8DF;
+      padding: 30px clamp(16px, 4vw, 40px);
+      border-top: 1px solid rgba(79, 94, 78, 0.1);
+    }
+
+    .footer-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--accent-green);
+      text-transform: uppercase;
+    }
+
+    .footer-left svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--accent-green);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(79, 94, 78, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-green);
+      transition: all 0.2s ease;
+    }
+
+    .footer-socials a:hover {
+      background-color: var(--accent-green);
+      color: #FFFFFF;
+    }
+
+    .footer-socials svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
   </style>
 </head>
 <body>
-  <main class="wrapper">
-    <section class="card hero">
-      <div>
-        <div class="brand"><span class="seal" aria-hidden></span> canyoutellmeafairytale.com</div>
-        <h1>We’re spinning new capybara tales</h1>
-        <p class="lead">We are almost ready. Get a gentle, family‑friendly story when we launch.</p>
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <svg viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+    The post office is open — Dispatching physical snail mail to friends
+  </div>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">
+      can you tell me<span>a fairytale?</span>
+    </a>
+    <nav>
+      <a href="#how-it-works">How it works</a>
+      <a href="#" onclick="openModal(event)">Past post</a>
+      <a href="#" onclick="openModal(event)" class="cta-link">Request a letter ↗</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="kicker">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        Physical stories sent slowly
+      </span>
+      <h1 class="hero-title">
+        A cozy <span class="highlight">capybara</span> letter, sent to your mailbox.
+      </h1>
+      <p class="hero-desc">
+        Real paper letters from Nora, Bento, and the quiet corner of the world they call home. Stamped, sealed, and sent directly to friends.
+      </p>
+      <div class="cta-container">
+        <button class="btn-claim" onclick="openModal(event)">Request a paper letter</button>
+        <div class="sub-cta">
+          <!-- Sparkle / Deco SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v18M3 12h18M12 3l4 4-4 4-4-4 4-4zm0 10l4 4-4 4-4-4 4-4z" opacity="0.3"/>
+            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9Z" fill="currentColor"/>
+          </svg>
+          <span>Printed and sent by post. Exclusive to friends.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-illustration">
+      <!-- Orange Sun SVG -->
+      <svg class="bg-sun" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="#EAA354"/>
+      </svg>
+
+      <!-- Branch of Leaves SVG -->
+      <svg class="bg-leaves" viewBox="0 0 150 300" fill="none">
+        <!-- Branch path -->
+        <path d="M20 280 C60 210, 80 140, 70 20" stroke="#798A75" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Leaves -->
+        <path d="M70 20 C85 22, 95 12, 70 0 C55 12, 60 22, 70 20 Z" fill="#90A18C"/>
+        <path d="M68 60 C88 64, 102 44, 76 35 C58 44, 60 64, 68 60 Z" fill="#A4B7A0"/>
+        <path d="M63 110 C83 118, 98 98, 72 85 C54 98, 56 118, 63 110 Z" fill="#90A18C"/>
+        <path d="M56 170 C76 182, 91 162, 65 145 C47 162, 49 182, 56 170 Z" fill="#A4B7A0"/>
+        <path d="M46 230 C66 244, 81 224, 55 205 C37 224, 39 244, 46 230 Z" fill="#90A18C"/>
+        <!-- Leaves on the left side of the branch -->
+        <path d="M63 45 C40 38, 30 55, 56 65 C72 55, 70 38, 63 45 Z" fill="#81917D"/>
+        <path d="M57 95 C34 88, 24 105, 50 115 C66 105, 64 88, 57 95 Z" fill="#90A18C"/>
+        <path d="M49 150 C26 143, 16 160, 42 170 C58 160, 56 143, 49 150 Z" fill="#81917D"/>
+        <path d="M40 210 C17 203, 7 220, 33 230 C49 220, 47 203, 40 210 Z" fill="#90A18C"/>
+      </svg>
+
+      <!-- Envelope Container -->
+      <div class="envelope-wrapper">
+        <svg viewBox="0 0 450 360" width="100%" height="100%" fill="none" style="overflow: visible;">
+          <!-- Envelope Shadow (Built into SVG for rotation support) -->
+          <rect x="5" y="85" width="410" height="260" rx="8" fill="#1C1A17" opacity="0.08" />
+
+          <!-- Back Flap & Envelope Pocket -->
+          <rect x="0" y="80" width="410" height="260" rx="8" fill="#EADFCE" stroke="#DCD0BD" stroke-width="1.5"/>
+
+          <!-- Letter Card sliding out of envelope -->
+          <g transform="translate(40, 20)">
+            <!-- Shadow for letter -->
+            <rect x="2" y="2" width="310" height="230" rx="6" fill="#1C1A17" opacity="0.06"/>
+            <!-- Letter body -->
+            <rect x="0" y="0" width="310" height="230" rx="6" fill="#FDFDFB" stroke="#F1EFE9" stroke-width="1.5"/>
+            <!-- Dear Friend text -->
+            <text x="25" y="40" font-family="'Quicksand', sans-serif" font-weight="600" font-size="12" fill="#8E8576" letter-spacing="0.02em">Dear friend,</text>
+            <!-- Title -->
+            <text x="25" y="70" font-family="'Fraunces', serif" font-weight="800" font-size="28" fill="#2E2C28" letter-spacing="-0.01em">The river,</text>
+            <text x="25" y="102" font-family="'Fraunces', serif" font-weight="800" font-size="28" fill="#2E2C28" letter-spacing="-0.01em">the river</text>
+            <!-- Preview Text -->
+            <text x="25" y="142" font-family="'Quicksand', sans-serif" font-weight="500" font-size="14" fill="#6A665D">Nora and Bento</text>
+            <text x="25" y="166" font-family="'Quicksand', sans-serif" font-weight="500" font-size="14" fill="#6A665D">find a pebble that</text>
+            <text x="25" y="190" font-family="'Quicksand', sans-serif" font-weight="500" font-size="14" fill="#6A665D">the moon...</text>
+            
+            <!-- Tiny Leaf sprig on letter -->
+            <path d="M260 160 C265 170, 275 175, 270 195" stroke="#90A18C" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M270 195 C275 190, 285 192, 280 182 C273 186, 271 192, 270 195 Z" fill="#90A18C"/>
+            <path d="M266 178 C256 178, 258 170, 266 172 C270 174, 268 178, 266 178 Z" fill="#A4B7A0"/>
+          </g>
+
+          <!-- Front envelope folds -->
+          <!-- Left side flap -->
+          <path d="M0 80 L205 210 L0 340 Z" fill="#E4D8C5" stroke="#D3C7B3" stroke-width="1" opacity="0.95"/>
+          <!-- Right side flap -->
+          <path d="M410 80 L205 210 L410 340 Z" fill="#E4D8C5" stroke="#D3C7B3" stroke-width="1" opacity="0.95"/>
+          <!-- Bottom flap -->
+          <path d="M0 340 L205 185 L410 340 Z" fill="#DECDB8" stroke="#CDBCAB" stroke-width="1"/>
+
+          <!-- Postmark Text & Cancellation Lines -->
+          <g transform="translate(18, 290)" opacity="0.6">
+            <!-- Wavy stamp cancellation lines -->
+            <path d="M120 -20 Q130 -15, 140 -20 T160 -20 T180 -20" stroke="#7E7261" stroke-width="1.2" fill="none"/>
+            <path d="M120 -12 Q130 -7, 140 -12 T160 -12 T180 -12" stroke="#7E7261" stroke-width="1.2" fill="none"/>
+            <path d="M120 -4 Q130 1, 140 -4 T160 -4 T180 -4" stroke="#7E7261" stroke-width="1.2" fill="none"/>
+            
+            <text x="0" y="0" font-family="'Quicksand', sans-serif" font-weight="700" font-size="10" fill="#7E7261" letter-spacing="0.1em">RIVERBANK</text>
+            <text x="0" y="14" font-family="'Quicksand', sans-serif" font-weight="700" font-size="10" fill="#7E7261" letter-spacing="0.15em">POST <tspan font-weight="400" font-size="9">08•26</tspan></text>
+          </g>
+
+          <!-- Capybara Postage Stamp -->
+          <g transform="translate(320, 110) rotate(8)">
+            <!-- Stamp shadow -->
+            <rect x="1" y="1" width="76" height="96" rx="2" fill="#1C1A17" opacity="0.08"/>
+            <!-- Stamp scalloped border (white background card) -->
+            <rect x="0" y="0" width="76" height="96" rx="2" fill="#FFFFFF" stroke="#E3DDD3" stroke-width="1"/>
+            <!-- Scallop punches -->
+            <circle cx="0" cy="12" r="3" fill="#EADFCE"/>
+            <circle cx="0" cy="28" r="3" fill="#EADFCE"/>
+            <circle cx="0" cy="44" r="3" fill="#EADFCE"/>
+            <circle cx="0" cy="60" r="3" fill="#EADFCE"/>
+            <circle cx="0" cy="76" r="3" fill="#EADFCE"/>
+            <circle cx="76" cy="12" r="3" fill="#EADFCE"/>
+            <circle cx="76" cy="28" r="3" fill="#EADFCE"/>
+            <circle cx="76" cy="44" r="3" fill="#EADFCE"/>
+            <circle cx="76" cy="60" r="3" fill="#EADFCE"/>
+            <circle cx="76" cy="76" r="3" fill="#EADFCE"/>
+            <circle cx="12" cy="0" r="3" fill="#EADFCE"/>
+            <circle cx="28" cy="0" r="3" fill="#EADFCE"/>
+            <circle cx="44" cy="0" r="3" fill="#EADFCE"/>
+            <circle cx="60" cy="0" r="3" fill="#EADFCE"/>
+            <circle cx="12" cy="96" r="3" fill="#EADFCE"/>
+            <circle cx="28" cy="96" r="3" fill="#EADFCE"/>
+            <circle cx="44" cy="96" r="3" fill="#EADFCE"/>
+            <circle cx="60" cy="96" r="3" fill="#EADFCE"/>
+
+            <!-- Inner green background of stamp -->
+            <rect x="6" y="6" width="64" height="84" fill="#50786F"/>
+            
+            <!-- Capybara portrait in stamp -->
+            <!-- Back of neck -->
+            <path d="M22 80 C20 60, 25 45, 35 40 C45 35, 55 35, 60 45 C65 52, 63 65, 65 80 Z" fill="#A87F56"/>
+            <!-- Head & Snout -->
+            <path d="M30 46 C25 42, 28 30, 42 28 C55 26, 62 30, 60 40 C58 50, 42 50, 30 46 Z" fill="#B3895D"/>
+            <!-- Snout detail -->
+            <path d="M28 32 C26 34, 25 38, 29 42 C33 46, 36 42, 36 36 Z" fill="#936D48"/>
+            <circle cx="28" cy="36" r="1.5" fill="#2E2012"/> <!-- Nose/nostril -->
+            <!-- Eye -->
+            <circle cx="44" cy="33" r="2" fill="#1C1A17"/>
+            <circle cx="43.5" cy="32.5" r="0.6" fill="#FFFFFF"/>
+            <!-- Ear -->
+            <path d="M52 28 C50 25, 48 25, 48 29 C48 33, 52 31, 52 28 Z" fill="#936D48"/>
+
+            <!-- Stamp Label -->
+            <rect x="6" y="72" width="64" height="18" fill="#3D5F57"/>
+            <text x="38" y="83" font-family="'Fredoka', sans-serif" font-weight="600" font-size="6" fill="#FCFAF5" letter-spacing="0.08em" text-anchor="middle">CAPYBARA POST</text>
+          </g>
+
+          <!-- Wax Seal -->
+          <g transform="translate(205, 185) rotate(-5)" onclick="openModal(event)" style="cursor: pointer;">
+            <!-- Outer Wax shadow -->
+            <circle cx="2" cy="2" r="26" fill="#1C1A17" opacity="0.12"/>
+            <!-- Melted wax shape - irregular circle -->
+            <path d="M-22 -8 C-25 10, -10 26, 8 24 C24 22, 27 2, 20 -15 C13 -30, -18 -26, -22 -8 Z" fill="#AC4730"/>
+            <path d="M-20 -6 C-23 11, -8 23, 7 21 C21 19, 24 1, 18 -13 C11 -27, -16 -23, -20 -6 Z" fill="#BE583E"/>
+            <!-- Inner pressed area -->
+            <circle cx="0" cy="0" r="17" fill="#AC4730" stroke="#9C3A24" stroke-width="1"/>
+            <!-- Highlights for realistic wax shine -->
+            <path d="M-12 -12 A 16 16 0 0 1 12 -12" stroke="#E18F7B" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+            <!-- The letter "C" -->
+            <text x="-0.5" y="7" font-family="'Fraunces', serif" font-weight="700" font-size="20" fill="#E6A697" text-anchor="middle">C</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps/How It Works Section -->
+  <section class="steps-section" id="how-it-works">
+    <div class="steps-grid">
+      
+      <!-- Card 1 -->
+      <div class="step-card" onclick="openModal(event)">
+        <span class="step-num">01 / Share your address</span>
+        <h3>Give us your letterbox</h3>
+        <p>Provide your physical mailing address and your cozy friend access key.</p>
         
+        <div class="step-illustration">
+          <div class="step-circle">
+            <!-- Mailbox SVG -->
+            <svg width="60" height="70" viewBox="0 0 60 70" fill="none">
+              <!-- Post -->
+              <rect x="27" y="38" width="6" height="32" rx="1" fill="#8C775E"/>
+              <!-- Grass -->
+              <path d="M15 68 C20 62, 25 65, 30 68 C35 63, 40 65, 45 68" stroke="#85967E" stroke-width="3" stroke-linecap="round"/>
+              <!-- Mailbox shadow -->
+              <rect x="13" y="8" width="34" height="32" rx="6" fill="#99321B" opacity="0.2"/>
+              <!-- Mailbox main -->
+              <rect x="12" y="6" width="36" height="32" rx="6" fill="#BE583E"/>
+              <!-- Mailbox top round -->
+              <path d="M12 16 A 18 18 0 0 1 48 16 Z" fill="#BE583E"/>
+              <!-- Mailbox door/inlay -->
+              <path d="M15 16 A 15 15 0 0 1 45 16 L45 34 L15 34 Z" fill="#AC4730"/>
+              <!-- Mailbox opening flag -->
+              <rect x="8" y="18" width="4" height="12" rx="1" fill="#EAA354" transform="rotate(-15 8 18)"/>
+              <circle cx="7" cy="18" r="3" fill="#D98A33"/>
+              <!-- Handle/latch -->
+              <circle cx="30" cy="30" r="3.5" fill="#EADFCE"/>
+            </svg>
+          </div>
+        </div>
+
+        <span class="arrow">→</span>
       </div>
-      <div class="board float" aria-label="Two capybaras illustration">
-        <img src="public/capys.png" width="300" height="300" alt="Two cute capybaras, Nora and Bento, standing side by side" loading="eager" decoding="async" />
+
+      <!-- Card 2 -->
+      <div class="step-card" onclick="openModal(event)">
+        <span class="step-num">02 / Handcrafted & stamped</span>
+        <h3>Written, sealed with wax</h3>
+        <p>We print the story on paper, seal it with custom wax, and apply a real stamp.</p>
+        
+        <div class="step-illustration">
+          <div class="step-circle">
+            <!-- Kettle SVG -->
+            <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+              <!-- Steam puff -->
+              <path d="M22 10 Q18 5, 20 0 T24 -5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+              <path d="M28 8 Q25 4, 28 0 T26 -4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+              <!-- Stove trivet burner -->
+              <rect x="15" y="56" width="40" height="6" rx="2" fill="#7E7261"/>
+              <line x1="20" y1="62" x2="25" y2="68" stroke="#7E7261" stroke-width="3" stroke-linecap="round"/>
+              <line x1="50" y1="62" x2="45" y2="68" stroke="#7E7261" stroke-width="3" stroke-linecap="round"/>
+
+              <!-- Kettle main body -->
+              <path d="M20 56 C15 56, 12 50, 14 40 L18 26 C19 22, 23 18, 28 18 L42 18 C47 18, 51 22, 52 26 L56 40 C58 50, 55 56, 50 56 Z" fill="#3D5F57"/>
+              <!-- Kettle lid -->
+              <path d="M26 18 C26 14, 44 14, 44 18 Z" fill="#2E4842"/>
+              <circle cx="35" cy="12" r="3.5" fill="#EAA354"/>
+
+              <!-- Spout -->
+              <path d="M18 34 L8 24 L10 21 L22 28 Z" fill="#2E4842"/>
+
+              <!-- Handle -->
+              <path d="M28 18 C28 8, 42 8, 42 18" stroke="#EAA354" stroke-width="3" fill="none" stroke-linecap="round"/>
+              
+              <!-- Small tea cup next to it -->
+              <path d="M52 48 C52 56, 62 56, 62 48 Z" fill="#BE583E"/>
+              <path d="M62 46 C65 46, 65 52, 62 52" stroke="#BE583E" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+        </div>
+
+        <span class="arrow">→</span>
       </div>
-    </section>
-    <footer>
-      © <span id="year"></span> Can you tell me a fairytale
-    </footer>
-  </main>
+
+      <!-- Card 3 -->
+      <div class="step-card" onclick="openModal(event)">
+        <span class="step-num">03 / Arrives at your door</span>
+        <h3>Check your physical mail</h3>
+        <p>Open your letter when the kettle sings. Keep a physical archive of cozy fairytales.</p>
+        
+        <div class="step-illustration">
+          <div class="step-circle">
+            <!-- Box with letters SVG -->
+            <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+              <!-- Background letter cards peaking out -->
+              <g transform="translate(18, 10) rotate(-10)">
+                <rect width="26" height="34" rx="2" fill="#FFFFFF" stroke="#DCD0BD" stroke-width="1"/>
+                <line x1="4" y1="8" x2="22" y2="8" stroke="#ECE5D8" stroke-width="2"/>
+                <line x1="4" y1="14" x2="18" y2="14" stroke="#ECE5D8" stroke-width="2"/>
+              </g>
+              <g transform="translate(28, 8) rotate(15)">
+                <rect width="28" height="34" rx="2" fill="#FDFDFB" stroke="#DCD0BD" stroke-width="1"/>
+                <line x1="4" y1="8" x2="24" y2="8" stroke="#ECE5D8" stroke-width="2"/>
+                <line x1="4" y1="14" x2="20" y2="14" stroke="#ECE5D8" stroke-width="2"/>
+                <!-- small stamp representation -->
+                <rect x="18" y="20" width="6" height="8" fill="#BE583E" opacity="0.6"/>
+              </g>
+
+              <!-- Cardboard Box main front -->
+              <path d="M12 36 L58 36 L54 62 L16 62 Z" fill="#C2AB93"/>
+              <!-- Left fold of box flap open -->
+              <path d="M12 36 L4 26 L16 36 Z" fill="#B09B85"/>
+              <!-- Right fold of box flap open -->
+              <path d="M58 36 L66 26 L54 36 Z" fill="#B09B85"/>
+              <!-- Front label -->
+              <rect x="22" y="44" width="26" height="12" rx="2" fill="#FCFAF5" stroke="#B09B85" stroke-width="1"/>
+              <!-- Line on label -->
+              <line x1="26" y1="50" x2="44" y2="50" stroke="#C2AB93" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <span class="arrow">→</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Snail Mail Request Modal -->
+  <div class="modal-overlay" id="signup-modal" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()" style="max-width: 500px;">
+      <button class="modal-close" onclick="closeModal(event)">✕</button>
+      <h2>Request a Paper Letter</h2>
+      <p>Currently sending physical fairytales only to friends. Please enter your mailing address below.</p>
+      <form class="modal-form" onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your name" class="modal-input" required id="sub-name" />
+        <input type="text" placeholder="Street Address" class="modal-input" required id="sub-street" />
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <input type="text" placeholder="City" class="modal-input" required id="sub-city" />
+          <input type="text" placeholder="State / Province" class="modal-input" required id="sub-state" />
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <input type="text" placeholder="ZIP / Postal Code" class="modal-input" required id="sub-zip" />
+          <input type="text" placeholder="Country" class="modal-input" required id="sub-country" />
+        </div>
+        <input type="password" placeholder="Cozy Friend Code (e.g. capyfriend)" class="modal-input" required id="sub-code" />
+        <button type="submit" class="modal-btn">Request Snail Mail</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <!-- Cute Capybara Profile SVG -->
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="46" fill="#D2DAD0"/>
+          <!-- Body/Neck -->
+          <path d="M35 85 C32 60, 42 42, 58 38 C72 34, 82 38, 86 52 C92 65, 82 85, 82 85 Z" fill="#5E6F5C"/>
+          <!-- Head/Snout -->
+          <path d="M48 42 C40 38, 44 22, 65 20 C85 18, 92 22, 90 38 C88 52, 65 52, 48 42 Z" fill="#5E6F5C"/>
+          <!-- Eye -->
+          <circle cx="68" cy="28" r="3" fill="#E2E8DF"/>
+          <!-- Ear -->
+          <path d="M78 22 C76 18, 72 18, 72 24 C72 30, 78 28, 78 22 Z" fill="#4F5E4E"/>
+        </svg>
+        <span>© Can you tell me a fairytale?<br><tspan font-weight="400" style="text-transform: none; color: var(--text-muted); font-family: 'Quicksand', sans-serif;">Written slowly, near the water</tspan></span>
+      </div>
+
+      <div class="footer-socials">
+        <!-- Instagram Link -->
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+          </svg>
+        </a>
+        <!-- Substack/Butterfly-like Icon Link -->
+        <a href="#" aria-label="Substack">
+          <svg viewBox="0 0 24 24">
+            <path d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.881h21.078v11.713L12 17.026 1.46 22.594V10.881zM22.539 0H1.46v2.836h21.078V0z"/>
+          </svg>
+        </a>
+        <!-- Email Link -->
+        <a href="#" aria-label="Email">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('signup-modal').classList.add('active');
+    }
+
+    function closeModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('signup-modal').classList.remove('active');
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('sub-name').value;
+      const street = document.getElementById('sub-street').value;
+      const city = document.getElementById('sub-city').value;
+      const state = document.getElementById('sub-state').value;
+      const zip = document.getElementById('sub-zip').value;
+      const country = document.getElementById('sub-country').value;
+      const code = document.getElementById('sub-code').value;
+
+      if (code.toLowerCase().trim() !== 'capyfriend') {
+        alert('Invalid Friend Code! Please ask the author for the secret key.');
+        return;
+      }
+
+      alert(`Hooray, ${name}! Your physical fairytale request has been received. We will post it to:\n\n${street}\n${city}, ${state} ${zip}\n${country}`);
+      closeModal();
+    }
+  </script>
+
 </body>
 </html>
